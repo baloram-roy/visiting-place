@@ -1,0 +1,28 @@
+{% extends 'place/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="row justify-content-center bg-transparent text-white">
+    hi there
+    <div class="col-md-6 ">
+        <div class="card sdow bg-dark frad">
+            <div class="card-header ">Create & Update</div>
+            <div class="card-body">
+                <form action="" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{form|crispy}}
+                    <button type="submit" class="d-grid gap-2 col-6 mx-auto btn btn-outline-info  mb-2 mt-3 rounded-pill ">Save</button>
+                </form>
+            </div>
+        <div class="card-footer text-muted">2 days ago</div>
+    </div>
+</div>
+
+{% endblock content %}
+
+
+
+
+
+

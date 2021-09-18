@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+	<link rel="stylesheet" href="{% static 'place/main.css' %}">
+	<link rel="stylesheet" href="{% static 'place/form.css' %}">
+    <title>Document</title>
+</head>
+<body>
+<div class="contai">
+    <div class="wrapper">
+        <div class="section">
+            <div class="top_navbar">
+                <div class="hamburger">
+                    <a href="">
+                        <i class="fas fa-bars"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mx-3 mt-3">
+                {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-{{message.tags }}">
+                        {{message}}
+                    </div>
+                    {% endfor %}
+                {% endif %}
+                {% block content %}
+        
+                {% endblock content %}
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="profile">
+                <img src="{{ user.profile.image.url }}" alt="profile_picture">
+                <h3>{{user.username}}</h3>
+                <p>{{ user.profile.profession}}</p>
+            </div>
+            <ul>
+                <li>
+                    <a href="{% url 'place-list' %}" class="active">
+                        <span class="icon"><i class="fas fa-home"></i></span>
+                        <span class="item">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'place-create' %}">
+                        <span class="icon"><i class="fas fa-desktop"></i></span>
+                        <span class="item">Create Post</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="{% url 'user-profile' %}">
+                        <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                        <span class="item">Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-pen-alt"></i></span>
+                        <span class="item">Create Place</span>
+                    </a>
+                </li>
+                
+            
+                <li>
+                    <a href="{% url 'user-login' %}">
+                        <span class="icon"><i class="fas fa-user-shield"></i></span>
+                        <span class="item">Log in</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'user-register' %}">
+                        <span class="icon"><i class="fas fa-user-friends"></i></span>
+                        <span class="item">Register</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'user-logout' %}">
+                        <span class="icon"><i class="fas fa-cog"></i></span>
+                        <span class="item">Log Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var hamburger = document.querySelector(".hamburger");
+        hamburger.addEventListener("click", function(){
+            document.querySelector("body").classList.toggle("active");
+        })
+    </script>
+</div>
+</body>
+</html>

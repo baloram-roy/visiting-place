@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+*{
+	list-style: none;
+	text-decoration: none;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+}
+
+body{
+	background: #ffffff;
+	/* background: rgb(2,0,36); */
+	/* background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(100,50,150,0.989233193277311) 46%, rgba(89,0,255,1) 100%); */
+	/* background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(100,50,150,0.989233193277311) 35%, rgba(0,212,255,1) 100%); */
+}
+
+.wrapper .sidebar{
+	background: #ffffff;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 225px;
+	height: 100%;
+	padding: 20px 0;
+	transition: all 0.5s ease;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.wrapper .sidebar .profile{
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.wrapper .sidebar .profile img{
+	display: block;
+	width: 100px;
+	height: 100px;
+    border-radius: 50%;
+	margin: 0 auto;
+}
+
+.wrapper .sidebar .profile h3{
+	color: #000000;
+	margin: 10px 0 5px;
+}
+
+.wrapper .sidebar .profile p{
+	color: rgb(0, 0, 0);
+	font-size: 14px;
+}
+
+.wrapper .sidebar ul{
+    padding-left: 0px;
+}
+.wrapper .sidebar ul li a{
+    text-decoration: none;
+	display: block;
+	padding: 13px 15px;
+	border-bottom: 1px solid #dadada;
+	color: rgb(0, 0, 0);
+	font-size: 16px;
+	position: relative;
+    
+}
+
+.wrapper .sidebar ul li a .icon{
+	color: #000000;
+	width: 30px;
+	display: inline-block;
+}
+
+
+
+.wrapper .sidebar ul li a:hover,
+.wrapper .sidebar ul li a.active{
+	color: #0c7db1;
+
+	/* background:rgb(230, 230, 230); */
+    border-right: 2px solid rgb(33, 123, 165);
+}
+
+.wrapper .sidebar ul li a:hover .icon,
+.wrapper .sidebar ul li a.active .icon{
+	color: #0c7db1;
+}
+
+.wrapper .sidebar ul li a:hover:before,
+.wrapper .sidebar ul li a.active:before{
+	display: block;
+}
+
+.wrapper .section{
+	width: calc(100% - 225px);
+	margin-left: 225px;
+	transition: all 0.5s ease;
+}
+
+.wrapper .section .top_navbar{
+	background: rgb(255, 255, 255);
+	height: 50px;
+	display: flex;
+	align-items: center;
+	padding: 0 30px;
+    border-radius: 1px 1px 3px 3px;
+    margin-left: 16px;
+    margin-right: 16px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ 
+}
+
+.wrapper .section .top_navbar .hamburger a{
+	font-size: 28px;
+	color: #000000;
+}
+
+.wrapper .section .top_navbar .hamburger a:hover{
+	color: #27c8f0;
+}
+
+ 
+
+body.active .wrapper .sidebar{
+	left: -225px;
+}
+
+body.active .wrapper .section{
+	margin-left: 0;
+	width: 100%;
+}
+
+
+.sdow{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.rad{
+	border-radius: 3px 10px 10px 3px;
+}

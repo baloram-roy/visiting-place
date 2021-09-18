@@ -1,0 +1,18 @@
+.login,
+.image {
+  min-height: 70vh;
+}
+
+.bg-image {
+  /* background-image: url('dark lap.jpg'); */
+  /* background-image: url('{{ STATIC_URL }}/user/images/dark lap.jpg'); */
+  
+  background-size: cover;
+  background-position:left left;
+  background-repeat: no-repeat;
+}
+
+
+
+
+

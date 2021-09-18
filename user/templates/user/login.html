@@ -1,0 +1,45 @@
+{% extends 'user/user_base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="row no-gutter m-5">
+            <!-- The image half -->
+            <div class="col-md-6 d-none d-md-flex bg-image">
+                <img src="{% static 'user/images/dark lap.jpg' %}" alt="not found">
+            </div>
+
+
+            <!-- The content half -->
+            <div class="col-md-6 bg-light">
+            <div class="login d-flex align-items-center py-5 mb-4">
+
+                <!-- Demo content-->
+                <div class="container">
+                    <div class="row mt-5 pt-5">
+                        <div class="col-lg-10 col-xl-9 mx-auto">
+                            <h3 class="display-4 mb-3">Login Page!</h3>
+                            <form method = "POST">
+                            {% csrf_token %}
+                                <div class="form-group mb-3">
+                                    <input name="username" type="text" placeholder="Username" class="form-control rounded-pill border-0 shadow-sm px-4">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <input name="password" type="password" placeholder="Password" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary">
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">Login</button>
+                                <div class="mb-3">
+                                    <p>Don't have accoutns? <a href="{% url 'user-register' %}">click Here</a></p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div><!-- End -->
+
+            </div>
+            </div><!-- End -->
+
+        </div>
+    </div>
+{% endblock content %}
+
+

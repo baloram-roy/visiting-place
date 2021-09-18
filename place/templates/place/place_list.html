@@ -1,0 +1,20 @@
+{% extends 'place/base.html' %}
+{% load static %} 
+{% block content %}
+    <div class="row">
+        {% for place in places %}
+        <div class="col-md-3 mb-3">
+            <div class="card sdow ">
+                <a href="{% url 'place-detail' place.id %}">
+                    <img src="{{ place.image.url }}" class="card-img-top" alt="default.jpg"/>
+                </a>
+            
+                <div class="card-body" style="height: 100px;">                 
+                    <h5 class="card-title">{{ place.title }}</h5>
+                    <p class="card-text">Posted By: {{ place.author }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock content %}
